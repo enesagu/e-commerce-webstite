@@ -2,13 +2,13 @@ import { useState } from "react";
 import PageContainer from "./container/PageContainer";
 import Header from "./components/Header";
 import "./App.css";
-import ProductList from "./components/ProductList";
+import RouterConfig from "./config/RouterConfig";
 
 function App() {
   return <div>
     <PageContainer>
     <Header/>
-    <ProductList/>
+    <RouterConfig/>
     </PageContainer>
 
 

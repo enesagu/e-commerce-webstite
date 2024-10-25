@@ -5,7 +5,7 @@ import { CiLight } from "react-icons/ci";
 import { WiMoonFull } from "react-icons/wi";
 
 function Header() {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(true);
 
   const changeTheme = () => {
     const root = document.getElementById("root");    
