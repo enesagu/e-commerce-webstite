@@ -1,0 +1,31 @@
+/* General Container */
+.left-aligned-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: center; /* Centers the items vertically */
+    height: 400px; /* Adjust as needed */
+    padding: 20px;
+  }
+  
+  /* Box on the left side */
+  .box {
+    width: 200px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    border: 2px solid black; /* Black border for the box */
+    margin-right: 20px; /* Space between the box and lines */
+  }
+  
+  /* Container for the lines */
+  .lines-container {
+    display: flex;
+    flex-direction: column; /* Stacks the lines vertically */
+    gap: 10px; /* Space between each line */
+  }
+  
+  /* Line Styling */
+  .line {
+    width: 300px; /* Length of each line */
+    height: 2px; /* Thickness of the line */
+    background-color: black; /* Line color */
+  }
+  
