@@ -1,27 +1,25 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
+// Doğru yazım: 'intialState' yerine 'initialState'
+const initialState = {
+  loading: false,
+};
 
-const intialState = {
-    loading : false,
-
-
-}
-
+// Doğru yazım: 'reducer' yerine 'reducers' ve 'extraReducer' yerine 'extraReducers'
 export const appSlice = createSlice({
-    name:"app",
-    intialState,
-    reducer:{
-
+  name: "app",
+  initialState, // Doğru başlangıç durumu
+  reducers: {
+    // Reducer fonksiyonları buraya eklenecek
+    setLoading: (state, action) => {
+      state.loading = action.payload; // loading durumunu güncellemek için örnek bir reducer
     },
-    extraReducer : (build)=>{
+  },
+  extraReducers: (builder) => {
+    // Ek durum işleyicileri buraya eklenebilir
+  },
+});
 
-    }
-})
-
-export const { } = appSlice.actions;
+export const { setLoading } = appSlice.actions; // Eylemi dışa aktarın
 
 export default appSlice.reducer;
-
-
-
-
