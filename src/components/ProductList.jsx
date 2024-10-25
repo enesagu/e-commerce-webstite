@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../redux/slices/productSlice';
+import Product from './Product';
+import '../css/ProductList.css'; // Import the CSS file
 
 function ProductList() {
   const dispatch = useDispatch();
 
-  // Ürünleri store'dan doğru bir şekilde alın
+  // Fetch products from the store
   const products = useSelector((store) => store.product.products);
   const loading = useSelector((store) => store.product.loading);
 
@@ -13,18 +15,15 @@ function ProductList() {
     dispatch(getAllProducts());
   }, [dispatch]);
 
-  console.log(products);
-
   return (
-    <div>
+    <div className="product-list-container">
       <h1>Product List</h1>
-      {loading && <p>Loading...</p>}
       {products && products.length > 0 ? (
-        <ul>
+        <div className="product-grid">
           {products.map((product) => (
-            <li key={product.id}>{product.title}</li>
+            <Product key={product.id} product={product} />
           ))}
-        </ul>
+        </div>
       ) : (
         !loading && <p>No products available.</p>
       )}
