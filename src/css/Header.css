@@ -1,0 +1,43 @@
+.logo-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Logo resmi */
+.logo {
+  width: 90px;
+  height: 75px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+/* Logo altındaki metin */
+.logo-text {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.search-input {
+
+  box-shadow: none;
+
+  padding: 5px 10px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+
+
+}
