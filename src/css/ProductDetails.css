@@ -1,31 +1,114 @@
-/* General Container */
-.left-aligned-container {
-    display: flex;
-    justify-content: flex-start; /* Aligns content to the left */
-    align-items: center; /* Centers the items vertically */
-    height: 400px; /* Adjust as needed */
-    padding: 20px;
-  }
-  
-  /* Box on the left side */
-  .box {
-    width: 200px; /* Adjust width as needed */
-    height: 150px; /* Adjust height as needed */
-    border: 2px solid black; /* Black border for the box */
-    margin-right: 20px; /* Space between the box and lines */
-  }
-  
-  /* Container for the lines */
-  .lines-container {
-    display: flex;
-    flex-direction: column; /* Stacks the lines vertically */
-    gap: 10px; /* Space between each line */
-  }
-  
-  /* Line Styling */
-  .line {
-    width: 300px; /* Length of each line */
-    height: 2px; /* Thickness of the line */
-    background-color: black; /* Line color */
-  }
-  
+/* Container for the product details page */
+.product-detail-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Main product detail section */
+.product-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Styling for the product image */
+.product-detail-image {
+  width: 300px;
+  height: 300px;
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+  border: 2px solid #e6e6e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Container for product information */
+.product-detail-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+/* Product title styling */
+.product-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Product description styling */
+.product-description {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Product price styling */
+.product-price {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(185, 76, 76);
+  margin-bottom: 20px;
+}
+
+/* Flex container for action buttons and icons */
+.product-action {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 15px;
+  padding: auto;
+  padding:0px 10px 0px 10px;
+  background-color: lightgray;
+}
+
+/* Icon style */
+.add-icon {
+  font-size: 40px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.add-icon:hover {
+  color: #e67e22; /* Change color on hover */
+}
+
+/* Add to Cart button styling */
+.product-detail-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto; /* Ensures the button stays on the right */
+}
+
+.product-detail-button:hover {
+  background-color: #0056b3;
+}
+/* ProductDetails.css */
+
+/* Container for related products */
+.related-products-container {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+/* Grid layout for related products */
+.related-products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* Aligns products to the left */
+}

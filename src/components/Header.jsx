@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Header.css";
 import { FaTruckRampBox } from "react-icons/fa6";
 import { CiLight } from "react-icons/ci";
 import { WiMoonFull } from "react-icons/wi";
 import { useNavigate } from "react-router-dom";
+import Badge from "@mui/material/Badge";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrawer } from "../redux/slices/basketSlice";
 
 function Header() {
   const [theme, setTheme] = useState(true);
   const [logoClicked, setLogoClicked] = useState(false);
 
+  const {products} = useSelector((store)=>store.basket);
+
+  const dispatch = useDispatch();
   const changeTheme = () => {
     const root = document.getElementById("root");
 
@@ -22,6 +28,8 @@ function Header() {
       root.style.color = "black";
     }
   };
+
+
 
   const handleLogoClick = () => {
     setLogoClicked(true);
@@ -41,7 +49,7 @@ function Header() {
     >
       <div className="logo-div">
         <div
-          className={`logo ${logoClicked ? 'clicked' : ''}`}
+          className={`logo ${logoClicked ? "clicked" : ""}`}
           onClick={() => {
             navigate("/");
             handleLogoClick();
@@ -62,7 +70,11 @@ function Header() {
       </div>
 
       <div style={{ display: "flex", alignItems: "center" }}>
-        <input className="search-input" type="text" placeholder="Search anyThing" />
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Search anyThing"
+        />
 
         <div style={{ cursor: "pointer", marginLeft: "10px" }}>
           {theme ? (
@@ -70,8 +82,17 @@ function Header() {
           ) : (
             <CiLight onClick={changeTheme} className="icons" />
           )}
-          <FaTruckRampBox className="icons" />
+
+          <Badge onClick={()=>dispatch(setDrawer())} badgeContent={products.length} color="success">
+             <FaTruckRampBox style={{marginTop:"-26px",marginRight:"5px"}} className="icons" />
+          </Badge>
+
+
+
         </div>
+
+          
+
       </div>
     </div>
   );

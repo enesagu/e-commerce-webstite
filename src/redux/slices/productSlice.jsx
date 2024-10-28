@@ -5,6 +5,7 @@ const initialState = {
   products: [],
   selectedProduct: {},
   loading: false,
+  maxQuantity:50
 };
 
 const BASE_URL = "https://fakestoreapi.com";
