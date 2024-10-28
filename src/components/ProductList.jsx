@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllProducts } from '../redux/slices/productSlice';
-import Product from './Product';
-import '../css/ProductList.css'; // Import the CSS file
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../redux/slices/productSlice";
+import Product from "./Product";
+import "../css/ProductList.css";
 
 function ProductList() {
   const dispatch = useDispatch();
 
   // Fetch products from the store
-  const products = useSelector((store) => store.product.products);
+  const products = useSelector((store) => store.product.filteredProducts); // Use filteredProducts instead
   const loading = useSelector((store) => store.product.loading);
 
   useEffect(() => {

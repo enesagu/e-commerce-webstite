@@ -65,6 +65,9 @@
 .icons {
   font-size: 30px;
   margin-right: 10px;
+  border: 3px solid transparent;
+  cursor: pointer;
+
 }
 
 .search-input:hover {
@@ -81,4 +84,19 @@
 #root {
   height: 100%;
   transition: background-color 0.5s ease, color 0.5s ease; /* Smooth theme change */
+}
+
+
+.button-search{
+  font-size: 30px;
+  margin-right: 10px;
+  margin-left: 5px;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+.icons:hover{
+
+  border-top: 3px solid black;
+
 }
